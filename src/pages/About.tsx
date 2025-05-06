@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
@@ -57,7 +56,6 @@ const About = () => {
                   </div>
                   <div className="absolute -bottom-5 -left-5 bg-mindsync-teal text-white p-4 rounded-lg shadow-md">
                     <p className="font-bold">Founded in Africa</p>
-                    <p>Osun State, Nigeria</p>
                   </div>
                 </div>
               </div>
@@ -161,7 +159,7 @@ const About = () => {
                   name: "Ayantayo Ibrahim",
                   role: "Founder & Lead Consultant",
                   bio: "Visionary leader with extensive experience in AI systems and business transformation.",
-                  image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80"
+                  image: "/ayantayo-ibrahim.jpg"
                 },
                 {
                   name: "Bosede Ayantayo",
@@ -173,7 +171,7 @@ const About = () => {
                   name: "Abiola Ayantayo",
                   role: "Technical Lead, AI Systems",
                   bio: "AI specialist with expertise in developing intelligent systems and automation solutions.",
-                  image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80"
+                  image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
                 }
               ].map((member, index) => (
                 <div key={index} className="bg-mindsync-gray rounded-xl overflow-hidden shadow-md">

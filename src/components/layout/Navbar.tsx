@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
@@ -102,7 +101,14 @@ const Navbar = () => {
         </nav>
 
         <div className="hidden md:block">
-          <Button className="btn-primary">Book a Discovery Call</Button>
+          <a 
+            href="https://calendly.com/mindsyncai-africa/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary"
+          >
+            Book a Discovery Call
+          </a>
         </div>
 
         {/* Mobile menu button */}
@@ -160,9 +166,15 @@ const Navbar = () => {
               <Link to="/contact" className="text-mindsync-blue" onClick={closeMenu}>
                 Contact
               </Link>
-              <Button className="btn-primary w-full mt-4" onClick={closeMenu}>
+              <a 
+                href="https://calendly.com/mindsyncai-africa/30min"
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="btn-primary w-full mt-4" 
+                onClick={closeMenu}
+              >
                 Book a Discovery Call
-              </Button>
+              </a>
             </nav>
           </div>
         )}

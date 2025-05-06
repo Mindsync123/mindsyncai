@@ -32,7 +32,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative bg-[#33C3F0] text-white min-h-screen flex items-center">
+    <section className="relative bg-mindsync-blue text-white min-h-screen flex items-center">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-0 right-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQ0MCIgaGVpZ2h0PSI4NjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgb3BhY2l0eT0iLjEiIGZpbGw9IiNGRkZGRkYiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PGNpcmNsZSBjeD0iNjUyLjUiIGN5PSI0MzIuNSIgcj0iMzQuNSIvPjxjaXJjbGUgY3g9IjY1Mi41IiBjeT0iNjM4LjUiIHI9IjE4LjUiLz48Y2lyY2xlIGN4PSI1ODYuNSIgY3k9IjU0My41IiByPSIxMi41Ii8+PGNpcmNsZSBjeD0iNzI5LjUiIGN5PSI1NDMuNSIgcj0iMTIuNSIvPjxjaXJjbGUgY3g9IjcyOS41IiBjeT0iMzEwLjUiIHI9IjE4LjUiLz48Y2lyY2xlIGN4PSI1ODYuNSIgY3k9IjMxMC41IiByPSIxOC41Ii8+PC9nPjwvc3ZnPg==')] bg-no-repeat bg-cover opacity-20"></div>
       </div>
