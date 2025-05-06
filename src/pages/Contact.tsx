@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
@@ -65,14 +64,14 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    console.log('Form submitted to MindSyncai.Africa@gmail.com:', formData);
 
     // Simulate form submission
     setTimeout(() => {
       setFormSubmitted(true);
       toast({
         title: "Message sent!",
-        description: "We'll get back to you as soon as possible.",
+        description: "Thank you for contacting Mindsync AI. Our team will reach out shortly.",
         variant: "default",
       });
     }, 1000);
@@ -106,9 +105,12 @@ const Contact = () => {
                   <Phone size={24} className="text-mindsync-teal" />
                 </div>
                 <h3 className="text-xl font-bold text-mindsync-blue mb-2">Call Us</h3>
-                <p className="text-mindsync-gray-dark mb-2">Mon-Fri, 9am-5pm PST</p>
-                <a href="tel:+15551234567" className="text-mindsync-teal font-medium">
-                  +1 (555) 123-4567
+                <p className="text-mindsync-gray-dark mb-2">Business Hours</p>
+                <a href="tel:+2349040117077" className="text-mindsync-teal font-medium block">
+                  +234 904 011 7077
+                </a>
+                <a href="tel:+2349069432190" className="text-mindsync-teal font-medium">
+                  +234 906 943 2190
                 </a>
               </div>
               
@@ -118,8 +120,8 @@ const Contact = () => {
                 </div>
                 <h3 className="text-xl font-bold text-mindsync-blue mb-2">Email Us</h3>
                 <p className="text-mindsync-gray-dark mb-2">We'll respond within 24 hours</p>
-                <a href="mailto:info@mindsyncai.com" className="text-mindsync-teal font-medium">
-                  info@mindsyncai.com
+                <a href="mailto:MindSyncai.Africa@gmail.com" className="text-mindsync-teal font-medium">
+                  MindSyncai.Africa@gmail.com
                 </a>
               </div>
               
@@ -130,8 +132,8 @@ const Contact = () => {
                 <h3 className="text-xl font-bold text-mindsync-blue mb-2">Visit Us</h3>
                 <p className="text-mindsync-gray-dark mb-2">Headquarters</p>
                 <address className="text-mindsync-gray-dark not-italic">
-                  123 Business Ave, Suite 500<br />
-                  San Francisco, CA 94107
+                  Km7 Ikirun-Osogbo Road,<br />
+                  Osun State, Nigeria
                 </address>
               </div>
             </div>
@@ -148,7 +150,7 @@ const Contact = () => {
                     </div>
                     <h3 className="text-xl font-bold text-mindsync-blue mb-4">Thank You!</h3>
                     <p className="text-mindsync-gray-dark mb-6">
-                      Your message has been sent successfully. A member of our team will be in touch with you shortly.
+                      Thank you for contacting Mindsync AI. Our team will reach out shortly.
                     </p>
                     <Button 
                       onClick={() => setFormSubmitted(false)} 
@@ -314,9 +316,14 @@ const Contact = () => {
                     <p className="mb-6">
                       Prefer to speak directly? Schedule a discovery call with our team at a time that works for you.
                     </p>
-                    <Button className="w-full bg-mindsync-teal hover:bg-mindsync-teal-light">
+                    <a 
+                      href="https://calendly.com/mindsyncai-africa/30min" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="w-full bg-mindsync-teal hover:bg-mindsync-teal-light text-white font-medium px-4 py-2 rounded-lg block text-center"
+                    >
                       Book a Time
-                    </Button>
+                    </a>
                   </div>
                 </div>
               </div>

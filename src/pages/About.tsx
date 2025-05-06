@@ -36,7 +36,7 @@ const About = () => {
               <div className="md:w-1/2 md:pr-12 mb-10 md:mb-0">
                 <h2 className="text-3xl font-bold text-mindsync-blue mb-6">Our Story</h2>
                 <p className="text-mindsync-gray-dark mb-6">
-                  Mindsync AI Consult was founded in 2018 by a team of technology experts and business consultants who shared a vision: to make advanced AI and automation solutions accessible to businesses of all sizes.
+                  Mindsync AI Consult was founded in Africa by a team of technology experts and business consultants who shared a vision: to make advanced AI and automation solutions accessible to businesses of all sizes.
                 </p>
                 <p className="text-mindsync-gray-dark mb-6">
                   What began as a small consulting firm has grown into a full-service technology partner that helps businesses transform their operations, automate complex processes, and achieve sustainable growth through intelligent systems.
@@ -56,8 +56,8 @@ const About = () => {
                     />
                   </div>
                   <div className="absolute -bottom-5 -left-5 bg-mindsync-teal text-white p-4 rounded-lg shadow-md">
-                    <p className="font-bold">Founded 2018</p>
-                    <p>San Francisco, CA</p>
+                    <p className="font-bold">Founded in Africa</p>
+                    <p>Osun State, Nigeria</p>
                   </div>
                 </div>
               </div>
@@ -158,21 +158,21 @@ const About = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
-                  name: "David Zhang",
-                  role: "Founder & CEO",
-                  bio: "Former AI research lead with 15 years of experience in machine learning and business systems.",
+                  name: "Ayantayo Ibrahim",
+                  role: "Founder & Lead Consultant",
+                  bio: "Visionary leader with extensive experience in AI systems and business transformation.",
                   image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80"
                 },
                 {
-                  name: "Sarah Johnson",
-                  role: "Chief Technology Officer",
-                  bio: "Expert in AI system architecture with experience building enterprise-scale solutions.",
+                  name: "Bosede Ayantayo",
+                  role: "Director of Operations",
+                  bio: "Expert in operational excellence with a focus on process optimization and team management.",
                   image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80"
                 },
                 {
-                  name: "Marcus Rivera",
-                  role: "Head of Consulting",
-                  bio: "Business transformation specialist with expertise in process optimization and change management.",
+                  name: "Abiola Ayantayo",
+                  role: "Technical Lead, AI Systems",
+                  bio: "AI specialist with expertise in developing intelligent systems and automation solutions.",
                   image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80"
                 }
               ].map((member, index) => (
@@ -202,9 +202,14 @@ const About = () => {
             <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
               Schedule a discovery call to discuss your business challenges and how we can help you overcome them.
             </p>
-            <Button className="bg-mindsync-teal hover:bg-mindsync-teal-light text-white font-medium px-8 py-4 rounded-lg text-lg">
+            <a 
+              href="https://calendly.com/mindsyncai-africa/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-mindsync-teal hover:bg-mindsync-teal-light text-white font-medium px-8 py-4 rounded-lg text-lg inline-block"
+            >
               Meet With Us
-            </Button>
+            </a>
           </div>
         </section>
       </main>

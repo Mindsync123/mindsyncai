@@ -1,60 +1,92 @@
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import WhatsappButton from '@/components/ui/WhatsappButton';
 import CaseStudyCard from '@/components/home/CaseStudyCard';
 import { Button } from '@/components/ui/button';
+import { ArrowRight, CheckCircle, BarChart4, Lightbulb, Factory } from 'lucide-react';
 
-const caseStudies = [
+const caseStudiesData = [
   {
     title: "AI Sales Automation for Regional Bank",
     client: "First Capital Bank",
     category: "AI Systems",
     image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80",
-    slug: "ai-sales-automation-bank"
+    slug: "ai-sales-automation-bank",
+    problem: "Manual sales tracking caused delays and lost opportunities.",
+    solution: "Deployed an AI-powered CRM and follow-up automation agent.",
+    tools: ["ChatGPT API", "n8n", "Airtable"],
+    results: "35% increase in closed deals within 3 months."
   },
   {
     title: "Inventory Management Overhaul for Retailer",
     client: "Urban Market Group",
     category: "Business Digitalization",
     image: "https://images.unsplash.com/photo-1553413077-190dd305871c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80",
-    slug: "inventory-management-retail"
+    slug: "inventory-management-retail",
+    problem: "Stockouts and excess inventory due to poor tracking.",
+    solution: "Built a digital inventory system with real-time alerts and auto-reordering logic.",
+    tools: ["Google Sheets API", "Make.com", "custom dashboard"],
+    results: "22% cost savings and zero stockouts in 60 days."
   },
   {
     title: "HR Process Automation for Healthcare Provider",
     client: "Wellness Medical Center",
     category: "Automation",
     image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80",
-    slug: "hr-automation-healthcare"
+    slug: "hr-automation-healthcare",
+    problem: "Time-consuming manual staff onboarding and leave tracking.",
+    solution: "Automated employee onboarding, attendance, and leave approvals using AI agents.",
+    tools: ["Zapier", "GPT-4 Assistants", "Notion"],
+    results: "HR team productivity improved by 45%."
   },
   {
     title: "Data-Driven Sales Strategy for Manufacturer",
     client: "Precision Industries Ltd.",
     category: "Consulting",
     image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80",
-    slug: "data-driven-sales-strategy"
+    slug: "data-driven-sales-strategy",
+    problem: "No sales visibility across regions and poor forecasting.",
+    solution: "Built a custom dashboard that visualizes sales by product, region, and rep.",
+    tools: ["Google Data Studio", "OpenAI", "Google Sheets"],
+    results: "Improved sales forecasting accuracy and 18% revenue growth."
   },
   {
     title: "E-Commerce Integration for Traditional Retailer",
     client: "Heritage Goods",
     category: "Business Digitalization",
     image: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80",
-    slug: "ecommerce-integration-retail"
+    slug: "ecommerce-integration-retail",
+    problem: "Physical-only sales limited customer base.",
+    solution: "Created a full e-commerce platform synced with store inventory.",
+    tools: ["Shopify", "Airtable", "OpenAI product descriptions"],
+    results: "Online sales accounted for 40% of total revenue within 4 months."
   },
   {
     title: "Customer Service AI Implementation",
     client: "Global Communications Inc.",
     category: "AI Systems",
     image: "https://images.unsplash.com/photo-1534536281715-e28d76689b4d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80",
-    slug: "customer-service-ai"
+    slug: "customer-service-ai",
+    problem: "Support response time was over 12 hours.",
+    solution: "Installed AI chatbot with trained intent recognition for fast ticket resolution.",
+    tools: ["GPT-4", "WhatsApp Business API", "Twilio"],
+    results: "Reduced average response time to under 3 minutes."
   }
 ];
 
 const CaseStudies = () => {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedCaseStudy, setSelectedCaseStudy] = useState(null);
+  
   useEffect(() => {
     document.title = "Case Studies | Mindsync AI Consult";
   }, []);
+
+  const filteredCaseStudies = selectedCategory === "All" 
+    ? caseStudiesData 
+    : caseStudiesData.filter(study => study.category === selectedCategory);
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -79,19 +111,39 @@ const CaseStudies = () => {
         <div className="bg-white border-b shadow-sm">
           <div className="container mx-auto px-4">
             <div className="py-4 flex flex-wrap gap-2">
-              <Button variant="outline" className="rounded-full text-sm">
+              <Button 
+                variant={selectedCategory === "All" ? "default" : "outline"} 
+                className="rounded-full text-sm"
+                onClick={() => setSelectedCategory("All")}
+              >
                 All Categories
               </Button>
-              <Button variant="outline" className="rounded-full text-sm">
+              <Button 
+                variant={selectedCategory === "AI Systems" ? "default" : "outline"} 
+                className="rounded-full text-sm"
+                onClick={() => setSelectedCategory("AI Systems")}
+              >
                 AI Systems
               </Button>
-              <Button variant="outline" className="rounded-full text-sm">
+              <Button 
+                variant={selectedCategory === "Business Digitalization" ? "default" : "outline"} 
+                className="rounded-full text-sm"
+                onClick={() => setSelectedCategory("Business Digitalization")}
+              >
                 Business Digitalization
               </Button>
-              <Button variant="outline" className="rounded-full text-sm">
+              <Button 
+                variant={selectedCategory === "Automation" ? "default" : "outline"} 
+                className="rounded-full text-sm"
+                onClick={() => setSelectedCategory("Automation")}
+              >
                 Automation
               </Button>
-              <Button variant="outline" className="rounded-full text-sm">
+              <Button 
+                variant={selectedCategory === "Consulting" ? "default" : "outline"} 
+                className="rounded-full text-sm"
+                onClick={() => setSelectedCategory("Consulting")}
+              >
                 Consulting
               </Button>
             </div>
@@ -102,23 +154,116 @@ const CaseStudies = () => {
         <section className="py-16 bg-mindsync-gray">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {caseStudies.map((study, index) => (
-                <CaseStudyCard
-                  key={index}
-                  title={study.title}
-                  client={study.client}
-                  category={study.category}
-                  image={study.image}
-                  slug={study.slug}
-                />
+              {filteredCaseStudies.map((study, index) => (
+                <div 
+                  key={index} 
+                  onClick={() => setSelectedCaseStudy(study)}
+                  className="cursor-pointer"
+                >
+                  <CaseStudyCard
+                    title={study.title}
+                    client={study.client}
+                    category={study.category}
+                    image={study.image}
+                    slug={study.slug}
+                  />
+                </div>
               ))}
             </div>
 
-            <div className="text-center mt-12">
-              <Button className="btn-primary">
-                Load More Case Studies
-              </Button>
-            </div>
+            {/* Case Study Detail Modal */}
+            {selectedCaseStudy && (
+              <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70">
+                <div className="bg-white rounded-xl w-full max-w-4xl max-h-[90vh] overflow-y-auto">
+                  <div className="relative">
+                    <div className="h-64 overflow-hidden">
+                      <div className="absolute inset-0 bg-mindsync-blue/40 z-10"></div>
+                      <img 
+                        src={selectedCaseStudy.image} 
+                        alt={selectedCaseStudy.title} 
+                        className="w-full h-full object-cover"
+                      />
+                      <button 
+                        className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm p-2 rounded-full text-white z-20 hover:bg-white/40 transition-colors"
+                        onClick={() => setSelectedCaseStudy(null)}
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M18 6L6 18M6 6l12 12"></path>
+                        </svg>
+                      </button>
+                      <div className="absolute bottom-6 left-6 z-20">
+                        <span className="bg-mindsync-teal text-white text-xs font-medium py-1 px-3 rounded-full mb-2 inline-block">
+                          {selectedCaseStudy.category}
+                        </span>
+                        <h2 className="text-2xl font-bold text-white">{selectedCaseStudy.title}</h2>
+                      </div>
+                    </div>
+                    
+                    <div className="p-8">
+                      <div className="mb-8">
+                        <p className="text-mindsync-blue font-medium mb-2">Client</p>
+                        <p className="text-xl font-bold text-mindsync-gray-dark">{selectedCaseStudy.client}</p>
+                      </div>
+                      
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                        <div className="bg-mindsync-gray p-6 rounded-xl">
+                          <div className="flex items-center mb-4">
+                            <div className="w-10 h-10 bg-mindsync-blue/10 rounded-full flex items-center justify-center mr-4">
+                              <Factory size={20} className="text-mindsync-teal" />
+                            </div>
+                            <h3 className="font-bold text-mindsync-blue">The Challenge</h3>
+                          </div>
+                          <p className="text-mindsync-gray-dark">{selectedCaseStudy.problem}</p>
+                        </div>
+                        
+                        <div className="bg-mindsync-gray p-6 rounded-xl">
+                          <div className="flex items-center mb-4">
+                            <div className="w-10 h-10 bg-mindsync-blue/10 rounded-full flex items-center justify-center mr-4">
+                              <Lightbulb size={20} className="text-mindsync-teal" />
+                            </div>
+                            <h3 className="font-bold text-mindsync-blue">Our Solution</h3>
+                          </div>
+                          <p className="text-mindsync-gray-dark">{selectedCaseStudy.solution}</p>
+                        </div>
+                      </div>
+                      
+                      <div className="mb-8">
+                        <h3 className="font-bold text-mindsync-blue mb-4">Tools & Technologies</h3>
+                        <div className="flex flex-wrap gap-2">
+                          {selectedCaseStudy.tools.map((tool, idx) => (
+                            <span key={idx} className="bg-mindsync-blue/10 text-mindsync-blue px-3 py-1 rounded-full text-sm">
+                              {tool}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                      
+                      <div className="bg-mindsync-teal/10 p-6 rounded-xl mb-8">
+                        <div className="flex items-center mb-4">
+                          <div className="w-10 h-10 bg-mindsync-teal/20 rounded-full flex items-center justify-center mr-4">
+                            <BarChart4 size={20} className="text-mindsync-teal" />
+                          </div>
+                          <h3 className="font-bold text-mindsync-blue">The Results</h3>
+                        </div>
+                        <p className="text-lg font-medium text-mindsync-teal">{selectedCaseStudy.results}</p>
+                      </div>
+                      
+                      <div className="text-center">
+                        <p className="text-mindsync-gray-dark mb-4">Want to achieve similar results for your business?</p>
+                        <a 
+                          href="https://calendly.com/mindsyncai-africa/30min"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center bg-mindsync-blue hover:bg-opacity-90 text-white font-medium px-6 py-3 rounded-lg transition-colors"
+                        >
+                          Schedule a Discovery Call <ArrowRight size={16} className="ml-2" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </section>
 
@@ -153,9 +298,14 @@ const CaseStudies = () => {
             <p className="text-xl text-mindsync-gray-dark mb-8 max-w-2xl mx-auto">
               Schedule a discovery call to discuss how we can help your business achieve similar results.
             </p>
-            <Button className="btn-primary">
+            <a 
+              href="https://calendly.com/mindsyncai-africa/30min"
+              target="_blank"
+              rel="noopener noreferrer" 
+              className="btn-primary inline-block bg-mindsync-teal hover:bg-mindsync-teal-light text-white font-medium px-8 py-3 rounded-lg"
+            >
               Book a Discovery Call
-            </Button>
+            </a>
           </div>
         </section>
       </main>

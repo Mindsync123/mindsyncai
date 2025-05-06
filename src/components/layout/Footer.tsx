@@ -12,12 +12,14 @@ const Footer = () => {
           <p className="text-lg mb-8 max-w-2xl mx-auto">
             Let's build intelligent systems that drive your business growth. Schedule a call with our expert team today.
           </p>
-          <Link 
-            to="/contact" 
+          <a
+            href="https://calendly.com/mindsyncai-africa/30min" 
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center bg-white text-mindsync-blue font-bold px-8 py-3 rounded-lg hover:bg-opacity-90 transition-all"
           >
             Let's Get Started <ArrowRight size={20} className="ml-2" />
-          </Link>
+          </a>
         </div>
       </div>
 
@@ -32,15 +34,18 @@ const Footer = () => {
             <div className="space-y-4">
               <div className="flex items-start">
                 <MapPin size={20} className="mr-3 text-mindsync-teal flex-shrink-0" />
-                <p>123 Business Ave, Suite 500<br />Enterprise City, EC 12345</p>
+                <p>Km7 Ikirun-Osogbo Road,<br />Osun State, Nigeria</p>
               </div>
-              <div className="flex items-center">
+              <div className="flex items-start">
                 <Phone size={20} className="mr-3 text-mindsync-teal flex-shrink-0" />
-                <p>+1 (555) 123-4567</p>
+                <div>
+                  <p>+234 904 011 7077</p>
+                  <p>+234 906 943 2190</p>
+                </div>
               </div>
               <div className="flex items-center">
                 <Mail size={20} className="mr-3 text-mindsync-teal flex-shrink-0" />
-                <p>info@mindsyncai.com</p>
+                <p>MindSyncai.Africa@gmail.com</p>
               </div>
             </div>
           </div>
