@@ -12,7 +12,7 @@ interface CaseStudyCardProps {
 
 const CaseStudyCard = ({ title, client, category, image, slug }: CaseStudyCardProps) => {
   return (
-    <Link to={`/case-studies/${slug}`} className="group">
+    <Link to={`/case-studies`} className="group">
       <div className="overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all h-full">
         <div className="h-56 overflow-hidden relative">
           <div className="absolute inset-0 bg-mindsync-blue/20 group-hover:bg-mindsync-blue/40 transition-colors z-10"></div>

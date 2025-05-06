@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
@@ -49,7 +50,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex justify-between items-center px-4">
         <Link to="/" className="flex items-center" onClick={closeMenu}>
-          <span className="text-mindsync-blue font-display font-bold text-xl">
+          <span className={`font-display font-bold text-xl ${isScrolled ? 'text-mindsync-blue' : 'bg-white px-3 py-1 rounded-md text-mindsync-blue'}`}>
             Mindsync<span className="text-mindsync-teal">AI</span> Consult
           </span>
         </Link>
