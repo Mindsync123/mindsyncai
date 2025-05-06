@@ -87,4 +87,33 @@
   .card {
     @apply bg-white rounded-xl shadow-md transition-all hover:shadow-lg p-6;
   }
+  
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    .btn-primary, .btn-secondary {
+      @apply w-full flex justify-center items-center text-center;
+    }
+    
+    h1 {
+      @apply text-3xl;
+    }
+    
+    h2 {
+      @apply text-2xl;
+    }
+    
+    .section-padding {
+      @apply py-12;
+    }
+    
+    /* Improved spacing for mobile */
+    .mobile-container {
+      @apply px-4;
+    }
+    
+    /* Better tap targets */
+    button, a {
+      @apply min-h-[44px] text-base;
+    }
+  }
 }

@@ -3,11 +3,13 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,7 +52,11 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex justify-between items-center px-4">
         <Link to="/" className="flex items-center" onClick={closeMenu}>
-          <span className={`font-display font-bold text-xl ${isScrolled ? 'text-mindsync-blue' : 'bg-white px-3 py-1 rounded-md text-mindsync-blue'}`}>
+          <span className={`font-display font-bold text-xl ${
+            isScrolled || isMobile 
+              ? 'text-mindsync-blue bg-white px-3 py-1 rounded-md' 
+              : 'bg-white px-3 py-1 rounded-md text-mindsync-blue'
+          }`}>
             Mindsync<span className="text-mindsync-teal">AI</span> Consult
           </span>
         </Link>
@@ -114,7 +120,7 @@ const Navbar = () => {
 
         {/* Mobile menu button */}
         <button 
-          className="md:hidden text-mindsync-blue"
+          className="md:hidden text-mindsync-blue z-50 bg-white p-1 rounded-md"
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
@@ -123,55 +129,55 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="fixed inset-0 bg-white z-50 md:hidden pt-16">
+          <div className="fixed inset-0 bg-white z-40 md:hidden pt-16 overflow-y-auto">
             <nav className="flex flex-col p-8 space-y-6 text-xl">
-              <Link to="/" className="text-mindsync-blue" onClick={closeMenu}>
+              <Link to="/" className="text-mindsync-blue text-center font-medium py-3 hover:bg-mindsync-gray rounded-lg" onClick={closeMenu}>
                 Home
               </Link>
-              <div>
+              <div className="border-t border-gray-100 pt-2">
                 <button 
-                  className="flex items-center justify-between w-full text-mindsync-blue"
+                  className="flex items-center justify-between w-full text-mindsync-blue py-3 font-medium"
                   onClick={toggleServices}
                 >
                   Services <ChevronDown size={20} className={`transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
                 </button>
                 {servicesOpen && (
-                  <div className="pl-4 mt-2 space-y-2">
-                    <Link to="/services/ai-systems" className="block py-2 text-mindsync-blue-light" onClick={closeMenu}>
+                  <div className="mt-2 space-y-0 bg-mindsync-gray rounded-lg overflow-hidden">
+                    <Link to="/services/ai-systems" className="block py-3 px-4 text-mindsync-blue-light text-center" onClick={closeMenu}>
                       AI Systems
                     </Link>
-                    <Link to="/services/business-digitalization" className="block py-2 text-mindsync-blue-light" onClick={closeMenu}>
+                    <Link to="/services/business-digitalization" className="block py-3 px-4 text-mindsync-blue-light text-center border-t border-white/20" onClick={closeMenu}>
                       Business Digitalization
                     </Link>
-                    <Link to="/services/automation" className="block py-2 text-mindsync-blue-light" onClick={closeMenu}>
+                    <Link to="/services/automation" className="block py-3 px-4 text-mindsync-blue-light text-center border-t border-white/20" onClick={closeMenu}>
                       Automation Solutions
                     </Link>
-                    <Link to="/services/consulting" className="block py-2 text-mindsync-blue-light" onClick={closeMenu}>
+                    <Link to="/services/consulting" className="block py-3 px-4 text-mindsync-blue-light text-center border-t border-white/20" onClick={closeMenu}>
                       Consulting
                     </Link>
-                    <Link to="/services/brand-design" className="block py-2 text-mindsync-blue-light" onClick={closeMenu}>
+                    <Link to="/services/brand-design" className="block py-3 px-4 text-mindsync-blue-light text-center border-t border-white/20" onClick={closeMenu}>
                       Brand Design & Print
                     </Link>
                   </div>
                 )}
               </div>
-              <Link to="/case-studies" className="text-mindsync-blue" onClick={closeMenu}>
+              <Link to="/case-studies" className="text-mindsync-blue text-center font-medium py-3 hover:bg-mindsync-gray rounded-lg border-t border-gray-100 pt-2" onClick={closeMenu}>
                 Case Studies
               </Link>
-              <Link to="/products" className="text-mindsync-blue" onClick={closeMenu}>
+              <Link to="/products" className="text-mindsync-blue text-center font-medium py-3 hover:bg-mindsync-gray rounded-lg" onClick={closeMenu}>
                 Products
               </Link>
-              <Link to="/about" className="text-mindsync-blue" onClick={closeMenu}>
+              <Link to="/about" className="text-mindsync-blue text-center font-medium py-3 hover:bg-mindsync-gray rounded-lg" onClick={closeMenu}>
                 About
               </Link>
-              <Link to="/contact" className="text-mindsync-blue" onClick={closeMenu}>
+              <Link to="/contact" className="text-mindsync-blue text-center font-medium py-3 hover:bg-mindsync-gray rounded-lg" onClick={closeMenu}>
                 Contact
               </Link>
               <a 
                 href="https://calendly.com/mindsyncai-africa/30min"
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="btn-primary w-full mt-4" 
+                className="btn-primary w-full text-center mt-6" 
                 onClick={closeMenu}
               >
                 Book a Discovery Call
