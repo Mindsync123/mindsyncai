@@ -97,7 +97,7 @@ const About = () => {
               <div className="bg-white p-8 rounded-xl shadow-md">
                 <div className="w-16 h-16 bg-mindsync-teal/10 rounded-full flex items-center justify-center mb-6">
                   <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="text-mindsync-teal">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 012-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                   </svg>
                 </div>
                 <h3 className="text-xl font-bold text-mindsync-blue mb-4">Results-Oriented</h3>
@@ -185,7 +185,7 @@ const About = () => {
                 <h3 className="text-xl font-bold mb-2">Phone Numbers</h3>
                 <p className="text-gray-300">
                   +2349040117077 <br />
-                  +2349069432190
+                  +2349069332190
                 </p>
               </div>
               

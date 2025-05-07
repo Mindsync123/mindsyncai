@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from 'react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
@@ -109,8 +110,8 @@ const Contact = () => {
                 <a href="tel:+2349040117077" className="text-mindsync-teal font-medium block">
                   +234 904 011 7077
                 </a>
-                <a href="tel:+2349069432190" className="text-mindsync-teal font-medium">
-                  +234 906 943 2190
+                <a href="tel:+2349069332190" className="text-mindsync-teal font-medium">
+                  +234 906 933 2190
                 </a>
               </div>
               
