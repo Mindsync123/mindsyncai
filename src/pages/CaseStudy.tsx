@@ -4,7 +4,7 @@ import { useParams, Link } from 'react-router-dom';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import WhatsappButton from '@/components/ui/WhatsappButton';
-import { ArrowLeft, BarChart4, Factory, Lightbulb, CheckCircle } from 'lucide-react';
+import { ArrowLeft, ArrowRight, BarChart4, Factory, Lightbulb, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 // Case studies data
