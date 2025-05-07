@@ -111,9 +111,19 @@
       @apply px-4;
     }
     
+    /* Better tap targets for case studies */
+    .case-study-card {
+      @apply mb-6 last:mb-0;
+    }
+    
     /* Better tap targets */
     button, a {
       @apply min-h-[44px] text-base;
+    }
+    
+    /* Ensure case study cards are more tappable */
+    .case-study-mobile-view {
+      @apply p-4 rounded-lg shadow-md bg-white mb-4;
     }
   }
 }

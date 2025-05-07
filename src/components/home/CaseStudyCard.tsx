@@ -15,7 +15,7 @@ const CaseStudyCard = ({ title, client, category, image, slug }: CaseStudyCardPr
   const isMobile = useIsMobile();
   
   return (
-    <Link to={`/case-studies/${slug}`} className="group block">
+    <Link to={`/case-studies/${slug}`} className="group block h-full">
       <div className={`overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all h-full ${isMobile ? 'flex flex-col' : ''}`}>
         <div className={`${isMobile ? 'h-48' : 'h-56'} overflow-hidden relative`}>
           <div className="absolute inset-0 bg-mindsync-blue/20 group-hover:bg-mindsync-blue/40 transition-colors z-10"></div>

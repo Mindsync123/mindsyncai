@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
 
@@ -40,7 +39,7 @@ const Footer = () => {
                 <Phone size={20} className="mr-3 text-mindsync-teal flex-shrink-0" />
                 <div>
                   <p>+234 904 011 7077</p>
-                  <p>+234 906 943 2190</p>
+                  <p>+234 906 933 2190</p>
                 </div>
               </div>
               <div className="flex items-center">
