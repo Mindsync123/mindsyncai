@@ -12,7 +12,11 @@ import Footer from '@/components/layout/Footer';
 import WhatsappButton from '@/components/ui/WhatsappButton';
 
 const Index = () => {
+  console.log('Index page rendering');
+
   useEffect(() => {
+    console.log('Index page mounted');
+    
     const observerOptions = {
       root: null,
       rootMargin: '0px',
@@ -42,7 +46,6 @@ const Index = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
-
       <main className="flex-grow">
         <Hero />
         <About />
@@ -52,7 +55,6 @@ const Index = () => {
         <Testimonials />
         <CTASection />
       </main>
-
       <Footer />
       <WhatsappButton />
     </div>
